@@ -8,27 +8,27 @@
 import SwiftUI
 
 struct FrameworkStackView: View {
-    let name: String
-    let imageName: String
+    let framework: Framework
     
     var body: some View {
         VStack {
-            Image(imageName)
+            Image(framework.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 90)
             
-            Text(name)
+            Text(framework.name)
                 .font(.title2)
                 .fontWeight(.semibold)
                 .scaledToFit()
                 .minimumScaleFactor(0.6)
         }
+        .padding()
     }
 }
 
 struct FrameworkStackView_Previews: PreviewProvider {
     static var previews: some View {
-        FrameworkStackView(name: "App Clips", imageName: "app-clip")
+        FrameworkStackView(framework: MockData.sampleFramework)
     }
 }

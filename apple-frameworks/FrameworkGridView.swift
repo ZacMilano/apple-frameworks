@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct FrameworkGridView: View {
+    let columns: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
-        FrameworkStackView(name: "App Clips", imageName: "app-clip")
+        NavigationView {
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(MockData.frameworks) { framework in
+                        FrameworkStackView(framework: framework)
+                    }
+                }
+            }
+            .navigationTitle("🍏 Frameworks")
+        }
     }
 }
 
