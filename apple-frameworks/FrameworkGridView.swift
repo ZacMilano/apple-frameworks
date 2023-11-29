@@ -22,11 +22,14 @@ struct FrameworkGridView: View {
                         FrameworkStackView(framework: framework)
                     }
                 }
+                
+                FrameworkDetailsView(framework: MockData.sampleFramework)
             }
             .navigationTitle("🍏 Frameworks")
         }
     }
 }
+
 
 struct FrameworkStackView: View {
     let framework: Framework
