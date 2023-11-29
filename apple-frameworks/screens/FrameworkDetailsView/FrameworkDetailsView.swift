@@ -27,8 +27,11 @@ struct FrameworkDetailsView: View {
             Button {
                 isShowingSafariView = true
             } label: {
-                ButtonContent(title: "Learn More")
+                Label("Learn More", systemImage: "book.fill")
             }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+            .tint(.purple)
         }
         .sheet(isPresented: $isShowingSafariView) {
             SafariView(
