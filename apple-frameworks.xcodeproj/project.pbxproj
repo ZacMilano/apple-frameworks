@@ -16,8 +16,8 @@
 		112306B62B16B8F500F11463 /* ButtonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112306B52B16B8F500F11463 /* ButtonContent.swift */; };
 		112306B82B16BB6600F11463 /* FrameworkGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112306B72B16BB6600F11463 /* FrameworkGridViewModel.swift */; };
 		112306BA2B16BF8A00F11463 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112306B92B16BF8A00F11463 /* SafariView.swift */; };
-		112306BE2B16C44E00F11463 /* FrameworkStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112306BD2B16C44E00F11463 /* FrameworkStackView.swift */; };
 		112306C02B16C4AD00F11463 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112306BF2B16C4AD00F11463 /* DismissButton.swift */; };
+		112306CC2B176BB900F11463 /* FrameworkTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112306CB2B176BB900F11463 /* FrameworkTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,8 @@
 		112306B52B16B8F500F11463 /* ButtonContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonContent.swift; sourceTree = "<group>"; };
 		112306B72B16BB6600F11463 /* FrameworkGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkGridViewModel.swift; sourceTree = "<group>"; };
 		112306B92B16BF8A00F11463 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
-		112306BD2B16C44E00F11463 /* FrameworkStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkStackView.swift; sourceTree = "<group>"; };
 		112306BF2B16C4AD00F11463 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		112306CB2B176BB900F11463 /* FrameworkTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 		112306C92B16C67700F11463 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				112306BD2B16C44E00F11463 /* FrameworkStackView.swift */,
+				112306CB2B176BB900F11463 /* FrameworkTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,8 +224,8 @@
 			files = (
 				112306B22B16B7A700F11463 /* FrameworkDetailsView.swift in Sources */,
 				112306AE2B16296E00F11463 /* FrameworkGridView.swift in Sources */,
-				112306BE2B16C44E00F11463 /* FrameworkStackView.swift in Sources */,
 				112306B62B16B8F500F11463 /* ButtonContent.swift in Sources */,
+				112306CC2B176BB900F11463 /* FrameworkTitleView.swift in Sources */,
 				112306AC2B16282900F11463 /* Framework.swift in Sources */,
 				1123069C2B16273A00F11463 /* apple_frameworksApp.swift in Sources */,
 				112306C02B16C4AD00F11463 /* DismissButton.swift in Sources */,

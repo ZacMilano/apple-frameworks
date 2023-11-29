@@ -7,31 +7,28 @@
 
 import SwiftUI
 
-//TODO 3:17:58
+//TODO 3:29:57
 struct FrameworkGridView: View {
     
     @StateObject var viewModel = FrameworkGridViewModel()
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVGrid(columns: viewModel.columns) {
-                    ForEach(MockData.frameworks) { framework in
-                        FrameworkStackView(framework: framework)
-                            .onTapGesture {
-                                viewModel.selectedFramework = framework
-                            }
+            List {
+                ForEach(MockData.frameworks) { framework in
+                    NavigationLink(
+                        destination: FrameworkDetailsView(
+                            framework: framework,
+                            isShowingDetailView: $viewModel.isShowingDetailView
+                        )
+                    ) {
+                        FrameworkTitleView(framework: framework)
                     }
                 }
             }
             .navigationTitle("🍏 Frameworks")
-            .sheet(isPresented: $viewModel.isShowingDetailView) {
-                FrameworkDetailsView(
-                    framework: viewModel.selectedFramework ?? MockData.sampleFramework,
-                    isShowingDetailView: $viewModel.isShowingDetailView
-                )
-            }
         }
+        .accentColor(Color(.label))
     }
 }
 
