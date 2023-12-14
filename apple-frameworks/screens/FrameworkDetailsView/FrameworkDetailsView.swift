@@ -8,24 +8,22 @@
 import SwiftUI
 
 struct FrameworkDetailsView: View {
-    var framework: Framework
-    @Binding var isShowingDetailView: Bool
-    @State private var isShowingSafariView = false
+    @ObservedObject var viewModel: FrameworkDetailsViewModel
     
     var body: some View {
         VStack {
             Spacer()
             
-            FrameworkTitleView(framework: framework)
+            FrameworkTitleView(framework: viewModel.framework)
             
-            Text(framework.description)
+            Text(viewModel.framework.description)
                 .font(.body)
                 .padding()
             
             Spacer()
             
             Button {
-                isShowingSafariView = true
+                viewModel.isShowingSafariView = true
             } label: {
                 Label("Learn More", systemImage: "book.fill")
             }
@@ -33,10 +31,10 @@ struct FrameworkDetailsView: View {
             .controlSize(.large)
             .tint(.purple)
         }
-        .sheet(isPresented: $isShowingSafariView) {
+        .sheet(isPresented: $viewModel.isShowingSafariView) {
             SafariView(
-                url: URL(string: framework.urlString)
-                    ?? URL(string: "www.apple.com")!
+                url: URL(string: viewModel.framework.urlString)
+                ?? URL(string: "www.apple.com")!
             )
         }
     }
@@ -45,8 +43,10 @@ struct FrameworkDetailsView: View {
 struct FrameworkDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         FrameworkDetailsView(
-            framework: MockData.sampleFramework,
-            isShowingDetailView: .constant(false)
+            viewModel: FrameworkDetailsViewModel(
+                framework: MockData.sampleFramework,
+                isShowingDetailView: .constant(false)
+            )
         )
     }
 }
