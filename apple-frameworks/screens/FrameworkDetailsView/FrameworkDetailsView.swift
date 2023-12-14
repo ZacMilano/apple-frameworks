@@ -22,20 +22,12 @@ struct FrameworkDetailsView: View {
             
             Spacer()
             
-            Button {
-                viewModel.isShowingSafariView = true
-            } label: {
+            Link(destination: URL(string: viewModel.framework.urlString) ?? URL(string: "www.apple.com")!) {
                 Label("Learn More", systemImage: "book.fill")
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
             .tint(.purple)
-        }
-        .sheet(isPresented: $viewModel.isShowingSafariView) {
-            SafariView(
-                url: URL(string: viewModel.framework.urlString)
-                ?? URL(string: "www.apple.com")!
-            )
         }
     }
 }
